@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7eadb" />
+  <title>First Light — A Soccer Story</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app" class="app-shell">
+    <section id="title-screen" class="title-screen">
+      <div class="title-art" id="title-art" aria-hidden="true"></div>
+      <header class="brand"><span class="brand-mark">✳</span> SOFT TOUCH <span class="brand-divider">/</span> INTERACTIVE STORY</header>
+      <div class="title-copy">
+        <p class="eyebrow">A STORY ABOUT THE SPACE BETWEEN</p>
+        <h1>First<br><em>Light.</em></h1>
+        <p class="title-description">One tryout. A thousand little choices.<br>Find your place on the pitch—and beyond it.</p>
+        <div class="title-actions">
+          <button id="play-button" class="button button-primary">Begin your story <span>→</span></button>
+          <button id="continue-button" class="button button-quiet" hidden>Continue story <span>↗</span></button>
+        </div>
+        <div class="title-note"><span>✦</span> A 10-minute visual novel <i></i> Made to be replayed</div>
+      </div>
+      <div class="title-side-note">NORTHSIDE<br>SEASON 01<br><span>VOL. 01 — 06</span></div>
+      <div class="title-footer"><span>© SOFT TOUCH STUDIO</span><span>SCROLL LESS. FEEL MORE.</span><span>PRESS ENTER TO BEGIN</span></div>
+    </section>
+
+    <section id="game-screen" class="game-screen" hidden>
+      <header class="game-topbar">
+        <button id="home-button" class="icon-button" aria-label="Return to title" title="Return to title">←</button>
+        <div class="chapter-label"><span class="chapter-kicker">NORTHSIDE · SEASON 01</span><span id="chapter-name">THE DAY BEFORE</span></div>
+        <div class="top-actions">
+          <button id="journal-button" class="top-button" aria-label="Open story journal">☷ <span>JOURNAL</span></button>
+          <button id="sound-button" class="top-button" aria-label="Toggle ambient sound">♫ <span id="sound-label">SOUND OFF</span></button>
+        </div>
+      </header>
+      <div class="game-stage">
+        <div id="scene-art" class="scene-art" aria-label="Illustrated story scene"></div>
+        <div class="scene-vignette"></div>
+        <div class="scene-caption"><span id="scene-location">MARA'S ROOM</span><span class="caption-dot">●</span><span id="scene-time">6:18 AM</span></div>
+        <div class="day-pill"><span>DAY</span> <b id="day-number">01</b><i></i><span id="day-name">FRIDAY</span></div>
+        <div id="thought-bubble" class="thought-bubble" hidden></div>
+        <div id="dialogue-wrap" class="dialogue-wrap">
+          <div class="dialogue-card">
+            <div class="dialogue-header"><div class="speaker-group"><span id="speaker-avatar" class="speaker-avatar">M</span><span id="speaker-name">MARA</span></div><span class="dialogue-index" id="dialogue-index">01 / 12</span></div>
+            <p id="dialogue-text" class="dialogue-text"></p>
+            <div id="choice-list" class="choice-list"></div>
+            <button id="next-button" class="next-button">CONTINUE <span>→</span></button>
+          </div>
+          <div class="dialogue-hint" id="dialogue-hint">CLICK ANYWHERE OR PRESS SPACE</div>
+        </div>
+        <div id="stats-panel" class="stats-panel" aria-label="Story status">
+          <div class="stat-item"><span>⚽</span><div><small>FORM</small><div class="stat-track"><i id="form-bar"></i></div></div></div>
+          <div class="stat-item"><span>♡</span><div><small>CONNECTION</small><div class="stat-track"><i id="bond-bar"></i></div></div></div>
+          <div class="stat-item"><span>☼</span><div><small>WELLBEING</small><div class="stat-track"><i id="well-bar"></i></div></div></div>
+        </div>
+        <button id="fast-forward" class="fast-forward">SKIP SEEN <span>»</span></button>
+      </div>
+      <footer class="game-footer"><span>FIRST LIGHT <i>✳</i></span><span id="autosave-label">PROGRESS SAVES AUTOMATICALLY</span><span>ESC <i>PAUSE</i></span></footer>
+    </section>
+
+    <div id="modal-backdrop" class="modal-backdrop" hidden>
+      <section id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button id="modal-close" class="modal-close" aria-label="Close">×</button>
+        <p class="eyebrow" id="modal-eyebrow">FIELD NOTES</p><h2 id="modal-title">Your journal</h2><div id="modal-content"></div>
+      </section>
+    </div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
